@@ -7,7 +7,8 @@ import com.cloud.springcloud.core.CoreResponseCode;
 import com.cloud.springcloud.rabbitmq.dao.RabbitMQConsume;
 import com.cloud.springcloud.rabbitmq.dao.RabbitMQProduct;
 import com.cloud.springcloud.thread.ExecutorServiceUtil;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class MQservice {
 
     private ExecutorService executorService = ExecutorServiceUtil.getInstance().getExecutorService() ;
 
-    Logger logger  = Logger.getLogger(this.getClass());
+    private static  final Logger logger  = LoggerFactory.getLogger(MQservice.class);
     public  void  sendMQMessage(String queueName ,String  message) throws ExecutionException, InterruptedException {
 
         List<Future> list = new ArrayList<>();

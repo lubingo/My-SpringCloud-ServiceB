@@ -4,16 +4,16 @@ import com.cloud.springcloud.core.CoreResponse;
 import com.cloud.springcloud.core.CoreResponseCode;
 import com.cloud.springcloud.login.dao.LoginDao;
 import com.cloud.springcloud.login.model.Login;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.AbstractDocument;
 
 @Service
 public class LoginService {
 
-    Logger  logger = Logger.getLogger(this.getClass());
+    private  static  final Logger logger = LoggerFactory.getLogger(LoginService.class);
     @Autowired
     private LoginDao  loginDao ;
 

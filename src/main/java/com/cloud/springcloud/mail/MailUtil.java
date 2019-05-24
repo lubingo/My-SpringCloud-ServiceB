@@ -2,9 +2,9 @@ package com.cloud.springcloud.mail;
 
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
-
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
