@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cade43f4-8cb4-41f7-aca2-91cbd6ee0699" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/springcloud/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -114,11 +111,11 @@
   <component name="MavenRunner">
     <option name="jreName" value="1.8" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-18" />
-    <option name="y" value="2" />
-    <option name="width" value="858" />
-    <option name="height" value="985" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="645" />
+    <option name="y" value="73" />
+    <option name="width" value="902" />
+    <option name="height" value="999" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -384,7 +381,7 @@
       <workItem from="1558684033582" duration="3339000" />
       <workItem from="1558917288752" duration="8984000" />
       <workItem from="1559004623056" duration="8871000" />
-      <workItem from="1559031279225" duration="1225000" />
+      <workItem from="1559031279225" duration="1936000" />
     </task>
     <task id="LOCAL-00001" summary="youhau">
       <created>1558666480976</created>
@@ -421,17 +418,23 @@
       <option name="project" value="LOCAL" />
       <updated>1558953143110</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="负载使用">
+      <created>1559039454372</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559039454372</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30829000" />
+    <option name="totallyTimeSpent" value="31540000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="247" y="31" width="976" height="985" extended-state="0" />
-    <editor active="true" />
+    <frame x="-228" y="7" width="858" height="985" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24235807" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2781955" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -470,7 +473,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="youhau" />
-    <option name="LAST_COMMIT_MESSAGE" value="youhau" />
+    <MESSAGE value="负载使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="负载使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
