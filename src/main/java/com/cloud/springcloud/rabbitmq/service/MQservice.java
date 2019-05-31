@@ -33,7 +33,7 @@ public class MQservice {
     private ExecutorService executorService = ExecutorServiceUtil.getInstance().getExecutorService() ;
 
     private static  final Logger logger  = LoggerFactory.getLogger(MQservice.class);
-    public  void  sendMQMessage(String queueName ,String  message) throws ExecutionException, InterruptedException {
+    public  void  sendMQMessage(String queueName ,String key ,String  message) throws ExecutionException, InterruptedException {
 
         List<Future> list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
@@ -42,7 +42,7 @@ public class MQservice {
                 @Override
                 public Object call()  {
                     logger.info( "生产线程名："+Thread.currentThread().getName());
-                    rabbitMQProduct.poductMessage(queueName, finalMessage);
+                    rabbitMQProduct.poductMessage(queueName,key, finalMessage);
                     return null;
                 }
             }) ;

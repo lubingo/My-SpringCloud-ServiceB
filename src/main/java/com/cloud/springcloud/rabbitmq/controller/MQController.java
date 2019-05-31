@@ -23,11 +23,12 @@ public class MQController {
     //生产消息
     @RequestMapping(path = "/sendMQMessage" ,produces = "application/plain;charset=utf-8" ,method = RequestMethod.POST)
     public String send(HttpServletRequest request , HttpServletResponse  response ,
-                           @RequestParam(required = true ,defaultValue = "")String queueName ,
+                           @RequestParam(required = true ,defaultValue = "")String channel ,
+                           @RequestParam(required = true ,defaultValue = "")String key ,
                            @RequestParam(defaultValue = "",required = true) String message) throws ExecutionException, InterruptedException {
-        mQservice.sendMQMessage(queueName,message);
+        mQservice.sendMQMessage(channel,key ,message);
         JSONObject  jsonObject=  new  JSONObject() ;
-        jsonObject.put("queueName" , queueName) ;
+        jsonObject.put("channel" , channel) ;
         jsonObject.put("message" , message) ;
         return jsonObject.toJSONString() ;
     }

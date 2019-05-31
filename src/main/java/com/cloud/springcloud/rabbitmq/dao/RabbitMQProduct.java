@@ -16,9 +16,9 @@ public class RabbitMQProduct {
     @Autowired
     public AmqpTemplate amqpTemplate ;
 
-    public  void  poductMessage(String queueName ,String queueMessage ){
+    public  void  poductMessage(String queueName ,String key ,String queueMessage ){
         //amqpTemplate.convertAndSend(queueName ,queueMessage);
-        amqpTemplate.send("bingo.TopicExchange","",new Message(queueMessage.getBytes(),new MessageProperties() ));
+        amqpTemplate.send(queueName,key,new Message(queueMessage.getBytes(),new MessageProperties() ));
     }
 
 
