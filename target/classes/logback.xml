@@ -34,7 +34,7 @@
 
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
         <!-- daily rollover -->
-        <fileNamePattern>${BASE_NAME}-logs/${LOG_NAME}/${LOG_NAME}.error.%d{yyyy-MM-dd}.log</fileNamePattern>
+        <fileNamePattern>${BASE_NAME}/${LOG_NAME}/${LOG_NAME}.error.%d{yyyy-MM-dd}.log</fileNamePattern>
         <!-- keep 30 days' worth of history -->
         <maxHistory>30</maxHistory>
     </rollingPolicy>
