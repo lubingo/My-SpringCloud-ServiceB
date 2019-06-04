@@ -3,6 +3,7 @@ package com.cloud.springcloud.redis.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
+
 public class RedisLock {
 
      @Autowired
@@ -27,7 +28,7 @@ public class RedisLock {
     /**
      * 线程获取锁的等待时间
      */
-    private int timeoutMsecs = 10 * 1000;
+    private int timeoutMsecs = 1 * 50;
     /**
      * 是否锁定标志
      */

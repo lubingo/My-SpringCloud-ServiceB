@@ -204,4 +204,45 @@ public class RedisUtils {
         return zset.rangeByScore(key, scoure, scoure1);
     }
 
+    /**
+     * 递增 此时value值必须为int类型 否则报错
+     * @param key 键
+     * @param delta 要增加几(大于0)
+     * @return
+     */
+    public long incr(String key, long delta){
+        if(delta<0){
+            throw new RuntimeException("递增因子必须大于0");
+        }
+        return redisTemplate.opsForValue().increment(key, delta);
+    }
+
+    /**
+     * 递减
+     * @param key 键
+     * @param delta 要减少几(小于0)
+     * @return
+     */
+    public long decr(String key, long delta){
+        if(delta<0){
+            throw new RuntimeException("递减因子必须大于0");
+        }
+        return redisTemplate.opsForValue().increment(key, -delta);
+    }
+
+    /**
+     * 加锁 乐观锁
+     * @param key
+     */
+    public  void  watch(String  key){
+        redisTemplate.watch(key);
+    }
+
+    /**
+     * 解锁
+     */
+    public  void  unwatch(){
+        redisTemplate.unwatch();
+    }
+
 }
