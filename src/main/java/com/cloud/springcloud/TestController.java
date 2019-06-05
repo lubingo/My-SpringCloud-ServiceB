@@ -61,7 +61,7 @@ public class TestController {
                                 return "";
                             }
                         } else {
-                            logger.info("您来晚了！");
+                            logger.info("人太拥挤！");
                         }
 
                     } catch (InterruptedException e) {

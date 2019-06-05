@@ -28,7 +28,7 @@ public class RedisLock {
     /**
      * 线程获取锁的等待时间
      */
-    private int timeoutMsecs = 1 * 50;
+    private int timeoutMsecs = 1 * 100;
     /**
      * 是否锁定标志
      */
