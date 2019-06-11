@@ -27,7 +27,7 @@ public class ConfigurationFilter  {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new InitMyFilter());//添加过滤器
         registration.addUrlPatterns("/*");//设置过滤路径，/*所有路径
-        registration.setName("InitMyFilter");//设置优先级
+        registration.setName("InitMyFilter");
         registration.setOrder(1);//设置优先级
         return registration;
     }
