@@ -33,7 +33,7 @@ public class TestController {
 
     private ExecutorService executorService = ExecutorServiceUtil.getInstance().getExecutorService();
 
-    @RequestMapping(value = "/function", method = {RequestMethod.POST})
+    @RequestMapping(value = "/function", method = {RequestMethod.POST,RequestMethod.GET})
     public String function(int thread, int count) throws ExecutionException, InterruptedException {
         //创建一个key  赋值为 100     库存
         redisUtils.set("kucun", count);
@@ -57,11 +57,11 @@ public class TestController {
                                 redisUtils.decr("kucun", 1);
                                 logger.info("抢购成功！");
                             } else {
-                                logger.info("没库存了" + finalI);
+                                logger.info("没库存了！");
                                 return "";
                             }
                         } else {
-                            logger.info("人太拥挤！");
+                            logger.info("人太拥挤了，请重试！");
                         }
 
                     } catch (InterruptedException e) {
