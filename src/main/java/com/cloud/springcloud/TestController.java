@@ -33,7 +33,7 @@ public class TestController {
 
     private ExecutorService executorService = ExecutorServiceUtil.getInstance().getExecutorService();
 
-    @RequestMapping(value = "/function", method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/function", method = {RequestMethod.POST, RequestMethod.GET})
     public String function(int thread, int count) throws ExecutionException, InterruptedException {
         //创建一个key  赋值为 100     库存
         redisUtils.set("kucun", count);
@@ -42,13 +42,10 @@ public class TestController {
         for (int i = 0; i < thread; i++) {
             int finalI = i;
 
-           if(i > count){
-               return "已抢光！" ;
-           }
             Future future = executorService.submit(new Callable() {
                 @Override
                 public Object call() {
-
+                    String str;
                     try {
                         boolean lockde = redisLock.lock();
 
@@ -56,23 +53,27 @@ public class TestController {
                             if (Integer.parseInt(redisUtils.get("kucun").toString()) > 0) {
                                 redisUtils.decr("kucun", 1);
                                 logger.info("抢购成功！");
+                                str = "抢购成功！";
                             } else {
                                 logger.info("没库存了！");
-                                return "";
+                                return "没库存了！";
                             }
                         } else {
                             logger.info("人太拥挤了，请重试！");
+                            return "人太拥挤了，请重试！";
                         }
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                        str = "抢购失败！";
                     } finally {
                         redisLock.unlock();
                     }
-                    return null;
+                    return str;
                 }
             });
-           Object object = future.get() ;
+            Object object = future.get();
+
 
         }
 
