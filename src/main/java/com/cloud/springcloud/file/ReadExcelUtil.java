@@ -216,20 +216,23 @@ public class ReadExcelUtil {
                 }
 //                遍历每一行的每一列，第三层循环行中所有单元格
                 List<String> cellList = new ArrayList<String>();
-                StringBuilder sb =  new StringBuilder("UPDATE ecommerce_order set  VBELN='0000") ;
+                StringBuilder sb =  new StringBuilder("UPDATE w_orders set delivery_status = '1'  ,province='") ;
                 for(int cellIndex=0;cellIndex<row.getLastCellNum();cellIndex++){
                     Cell cell = row.getCell(cellIndex);
                     if(cell != null ){
                         if(cellIndex == 0 ){
-                            sb.append(getCellValue(cell)).append("', POSNR='0000");
+                            sb.append(getCellValue(cell)).append("', city='");
                         }
                         if(cellIndex == 1 ){
-                            sb.append(getCellValue(cell)).append("',sync_sap_status = '2' ,sync_sap_time='").append(sdf.format(new Date())).append("' where  material_code ='");
+                            sb.append(getCellValue(cell)).append("',county ='");
                         }
                         if(cellIndex == 2 ){
-                            sb.append(getCellValue(cell)).append("' and order_code='");
+                            sb.append(getCellValue(cell)).append(",street='");
                         }
                         if(cellIndex == 3 ){
+                            sb.append(getCellValue(cell)).append("' where  order_number ='");
+                        }
+                        if(cellIndex == 4 ){
                             sb.append(getCellValue(cell)).append("';") ;
                         }
                         continue;

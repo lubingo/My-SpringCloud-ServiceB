@@ -61,8 +61,8 @@ public class FileUploadController {
 
         byte[] rebyte = new byte[1024] ;
         InputStream fileInputStream = file.getInputStream() ;
-        FileUtility.judeDirExists("G:/"+simpleDateFormat.format(new Date()));
-        OutputStream outputStream = new FileOutputStream("G:/"+simpleDateFormat.format(new Date())+"/"+ file.getOriginalFilename()) ;
+        FileUtility.judeDirExists("G:/"+simpleDateFormat.format(new Date())+"/TJ");
+        OutputStream outputStream = new FileOutputStream("G:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename()) ;
         while (fileInputStream.read(rebyte) != -1){
             outputStream.write(rebyte);
         }
@@ -70,12 +70,12 @@ public class FileUploadController {
         outputStream.close();
         fileInputStream.close();
 
-        String url = "G:/"+simpleDateFormat.format(new Date())+"/"+ file.getOriginalFilename() ;
+        String url = "G:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename() ;
 
-        List<String>  list= ReadExcelUtil.readExcelInfo(url);
+        List<String>  list= ReadExcelUtil.readExcelInfo1(url);
 
         String  txtUrl =   "F:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename().replaceAll("xlsx","txt") ;
-        FileUtility.judeDirExists("F:/"+simpleDateFormat.format(new Date()));
+        FileUtility.judeDirExists("F:/"+simpleDateFormat.format(new Date())+"/TJ");
         //写文件
         TxtFile.writeFileContext(list,txtUrl);
 
