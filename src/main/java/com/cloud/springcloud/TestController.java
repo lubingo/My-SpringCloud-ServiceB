@@ -82,5 +82,15 @@ public class TestController {
 
     }
 
+    /**
+     * 生成SQL
+     * @return
+     */
+    public  String   generateSQL(){
+
+
+
+        return  "" ;
+    }
 
 }
