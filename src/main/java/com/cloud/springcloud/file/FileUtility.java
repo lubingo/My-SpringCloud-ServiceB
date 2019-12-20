@@ -10,7 +10,7 @@ public class FileUtility {
     public static void judeDirExists(String str) {
         File file = new File(str);
         if (!file.exists())
-            file.mkdir();
+            file.mkdirs();
     }
 
 }

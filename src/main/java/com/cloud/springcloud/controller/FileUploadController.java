@@ -61,8 +61,8 @@ public class FileUploadController {
 
         byte[] rebyte = new byte[1024] ;
         InputStream fileInputStream = file.getInputStream() ;
-        FileUtility.judeDirExists("G:/"+simpleDateFormat.format(new Date())+"/TJ");
-        OutputStream outputStream = new FileOutputStream("G:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename()) ;
+        FileUtility.judeDirExists("F:/"+simpleDateFormat.format(new Date())+"/TJ");
+        OutputStream outputStream = new FileOutputStream("F:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename()) ;
         while (fileInputStream.read(rebyte) != -1){
             outputStream.write(rebyte);
         }
@@ -70,7 +70,7 @@ public class FileUploadController {
         outputStream.close();
         fileInputStream.close();
 
-        String url = "G:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename() ;
+        String url = "F:/"+simpleDateFormat.format(new Date())+"/TJ/"+ file.getOriginalFilename() ;
 
         List<String>  list= ReadExcelUtil.readExcelInfo1(url);
 

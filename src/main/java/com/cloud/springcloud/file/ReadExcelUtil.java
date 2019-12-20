@@ -227,7 +227,7 @@ public class ReadExcelUtil {
                             sb.append(getCellValue(cell)).append("',county ='");
                         }
                         if(cellIndex == 2 ){
-                            sb.append(getCellValue(cell)).append(",street='");
+                            sb.append(getCellValue(cell)).append("',street='");
                         }
                         if(cellIndex == 3 ){
                             sb.append(getCellValue(cell)).append("' where  order_number ='");
